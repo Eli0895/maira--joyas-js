@@ -1,4 +1,3 @@
-/*
 let PIN= "1234";
 let ingresar = false;
 function ingreso() {
@@ -13,16 +12,16 @@ function ingreso() {
         }
     } 
 }
-
 ingreso()
+
 if(ingresar){
-let productos=prompt(" Selecciona el tipo de joya en que estas interesado/a \n 1- ANILLOS \n 2-COLGANTES \n 3- PULSERAS \n 4-RELOJES \n 5-CADENAS \n 6-PRESIONA PARA SALIR");
+    let productos=prompt(" Selecciona el tipo de joya en que estas interesado/a \n 1- ANILLOS \n 2-COLGANTES \n 3- PULSERAS \n 4-RELOJES \n 5-CADENAS \n 6-PRESIONA PARA SALIR");
 while (productos !== ""){
 switch(productos){
     case"1": alert("seleccionastes anillos");
     break;
     case"2": alert("seleccionastes colgantes");
-    break; 
+    break;
     case"3": alert("seleccionastes pulseras");
     break;
     case"4": alert("seleccionastes relojes");
@@ -32,9 +31,14 @@ switch(productos){
     case"6": alert("Muchas gracias por visitarnos");
     break;
     default: alert("opcion no valida");
+    break;
+        }
+    productos= prompt(" Selecciona el tipo de joya en que estas interesado/a \n 1- ANILLOS \n 2-COLGANTES \n 3- PULSERAS \n 4-RELOJES \n 5-CADENAS \n 6-SALIR");
     }
+
 }
-productos= prompt(" Selecciona el tipo de joya en que estas interesado/a \n 1- ANILLOS \n 2-COLGANTES \n 3- PULSERAS \n 4-RELOJES \n 5-CADENAS \n 6-PRESIONA X PARA SALIR");
-}
+
+
+
 
 
