@@ -25,9 +25,6 @@ const promo3 = Productos.filter(p => {
     return p.nombre === 'colgante perlas' ||
         p.nombre === 'anillo1'
 });
-const total1 = promo1.reduce((acu, el) => acu + el.precio, 0);
-const total2 = promo2.reduce((acu, el) => acu + el.precio, 0);
-const total3 = promo3.reduce((acu, el) => acu + el.precio, 0);
 
 
 let PIN = "1234";
@@ -47,27 +44,29 @@ function ingreso() {
 
 ingreso()
 if (ingresar) {
-    let productos = prompt(" Selecciona la promo que se ajuste mas a vos ! \n 1-ANILLO ORO + CARAVANA CIRCONIA \n 2-ANILLO 925 + PULSERA CIRCONIA \n 3-COLLAR PERLA + ANILLO CIRCONIA \n 4-PRESIONA x PARA SALIR");
+    let productos = prompt(" Selecciona la promo que se ajuste mas a vos ! \n 1-ANILLO ORO + CARAVANA CIRCONIA \n 2-ANILLO 925 + PULSERA CIRCONIA \n 3-COLLAR PERLA + ANILLO CIRCONIA \n 4- MOSTRAR CARRITO \n PRESIONA x PARA SALIR");
     while (productos !== "x") {
         switch (productos) {
-            case "1": alert("El total es: $ " + (total1))
-                carrito.push(promo1);
+            case "1":
+                carrito.push(...promo1);
                 break;
-            case "2": alert("El total es: $ " + (total2));
-                carrito.push(promo2);
+            case "2":
+                carrito.push(...promo2);
                 break;
-            case "3": alert("El total es: $ " + (total3));
-                carrito.push(promo3);
+            case "3":
+                carrito.push(...promo3);
                 break;
-            case "4": alert(carrito.nombre);
+            case "4": alert(carrito.map(item => item.nombre).join(","));
                 break;
             default: alert("opcion no valida");
                 break;
         }
-        productos = prompt(" Selecciona la promo que se ajuste mas a vos ! \n 1-ANILLO ORO + CARAVANA CIRCONIA \n 2-ANILLO 925 + PULSERA CIRCONIA \n 3-COLLAR PERLA + ANILLO CIRCONIA \n 4- PRESIONA x PARA SALIR");
+        productos = prompt(" Selecciona la promo que se ajuste mas a vos ! \n 1-ANILLO ORO + CARAVANA CIRCONIA \n 2-ANILLO 925 + PULSERA CIRCONIA \n 3-COLLAR PERLA + ANILLO CIRCONIA \n 4- MOSTRAR CARRITO  \n PRESIONA x PARA SALIR");
     }
 }
-console.log(carrito)
+
+const totalCarrito = carrito.reduce((total, productos) => total + productos.precio, 0)
+console.log("Total del carrito: $ " + totalCarrito);
 
 
 
