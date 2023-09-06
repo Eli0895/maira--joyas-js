@@ -120,7 +120,20 @@ function leerProducto(producto){
         id: producto.querySelector("div").getAttribute("id"),
         cantidad: 1
     }
+    productosCarrito.push(infoJoya)
+console.log(productosCarrito);
+carritoHtml()
 }  
 
-productosCarrito.push(infoJoya)
-console.log(productosCarrito);
+function carritoHtml(){
+    productosCarrito.forEach(curso =>{
+        const row= document.createElement("tr");
+        row.innerHTML = `
+        <td>
+            ${curso.titulo}
+        </td>
+        `
+        listaDeCarrito.appendChild(row)
+    })
+}
+
