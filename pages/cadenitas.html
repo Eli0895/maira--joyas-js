@@ -12,19 +12,22 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark fixed-top">
+        <nav class="navbar ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">mairajoyas@gmail.com | 098344854</a>
+                <div class="iconos-carrito">
+                    <button id="carrito" class ="btn btn-light"><img src="../assets/img/bag.png" alt="carrito"></button>
+                    <button id="login" class="btn btn-light"><img src="../assets/img/account.png" alt="log in"></button>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Maira Joyas</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -55,7 +58,7 @@
                         </ul>
                         <form class="d-flex mt-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
+                            <button class="btn btn-dark" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
@@ -63,6 +66,30 @@
         </nav>
     </header>
     <main>
+        <div class="two column u-pull-rigth">
+            <ul>
+                <li class="submenu">
+                    <img src="../assets/img/bag.png" id="img-carrito">
+                    <div id="carrito">
+                        <table id="lista de carrito" class="u-full-width">
+                            <thead>
+                                <tr>
+                                    <th>imagen</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                    <th>cantidad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <a href="a" id="vaciar carrito" class="button u-full-width">Vaciar carrito</a>
+        </div>
+                        <tbody></tbody>
+                    </div>
+                    
+                </li>
+            </ul>
+            
         <section class="section-products">
             <div class="container">
                 <div class="row justify-content-center text-center">
@@ -72,18 +99,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="listaProductos">
                     <!-- Single Product -->
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div id="product-1" class="single-product">
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Alianzas oro</h3>
+                                <h4 class="product-price">$40000</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -93,10 +119,10 @@
                                 <span class="discount">15% off</span>
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo circonia</h3>
+                                <h4 class="product-price">$2000</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -105,11 +131,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo diamantes</h3>
+                                <h4 class="product-price">$4500</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -119,10 +144,10 @@
                                 <span class="new">new</span>
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Pulsera plata 925</h3>
+                                <h4 class="product-price">$1500</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -131,11 +156,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Cadenita arbol</h3>
+                                <h4 class="product-price">$1100</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -145,10 +169,10 @@
                                 <span class="discount">15% off</span>
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo ancho</h3>
+                                <h4 class="product-price">$2300</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -157,11 +181,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Cadenita chapa</h3>
+                                <h4 class="product-price">$1800</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -170,11 +193,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Colgante plata 925</h3>
+                                <h4 class="product-price">$1800</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -183,11 +205,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo detallado</h3>
+                                <h4 class="product-price">$1500</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -196,11 +217,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo diamante</h3>
+                                <h4 class="product-price">$5000</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -209,11 +229,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo labrado</h3>
+                                <h4 class="product-price">$1800</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -222,11 +241,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Esclavas plata</h3>
+                                <h4 class="product-price">$1700</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -235,11 +253,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Colgante triangulo</h3>
+                                <h4 class="product-price">$950</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -248,11 +265,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Caravana plata</h3>
+                                <h4 class="product-price">$750</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -261,11 +277,10 @@
                             <div class="part-1">
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-old-price">$79.99</h4>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo trenza</h3>
+                                <h4 class="product-price">$1750</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                     <!-- Single Product -->
@@ -275,10 +290,10 @@
                                 <span class="new">new</span>
                             </div>
                             <div class="part-2">
-                                <h3 class="product-title">Here Product Title</h3>
-                                <h4 class="product-price">$49.99</h4>
+                                <h3 class="product-title">Anillo convinado </h3>
+                                <h4 class="product-price">$2800</h4>
                             </div>
-                            <button type="button" class="btn btn-dark text-align-center">Agregar</button>
+                            <button type="button" class="btn btn-dark text-align-center agregar-carrito">Agregar</button>
                         </div>
                     </div>
                 </div>
@@ -345,7 +360,7 @@
             </div>
         </div>
     </footer>
-    <script src="../js/cadenita.js"></script>
+    <script src="../js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>

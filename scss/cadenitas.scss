@@ -79,24 +79,24 @@ a:hover {
                         transition: color 0.2s;
                     }
                 }
+            }
 
-        .part-2 {
-            .product-title {
-                font-size: 1rem;
-
-                h4 {
-                    display: inline-block;
+            .part-2 {
+                .product-title {
                     font-size: 1rem;
-                            }
+
+                    h4 {
+                        display: inline-block;
+                        font-size: 1rem;
+
+                    .product-old-price {
+                            position: relative;
+                            padding: 0 7px;
+                            margin-right: 2px;
+                            opacity: 0.6;
                         }
 
-            .product-old-price {
-                position: relative;
-                padding: 0 7px;
-                margin-right: 2px;
-                opacity: 0.6;
-                        }
-            .product-old-price::after{
+                    .product-old-price::after {
                             position: absolute;
                             content: "";
                             top: 50%;
@@ -109,19 +109,22 @@ a:hover {
                     }
                 }
             }
-
-            .part-1::before {
-                position: absolute;
-                content: "";
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                transition: all 0.3s;
-            }
         }
     }
+}
+
+    .part-1::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.3s;
+    }
+
+
 
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
@@ -171,7 +174,7 @@ a:hover {
 }
 
 .section-products #product-5 .part-1::before {
-    background: url("../assets/img/20220601_222937.jpg") no-repeat center;
+    background: url("../assets/img/20230619_182220.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
@@ -192,44 +195,44 @@ a:hover {
 }
 
 .section-products #product-9 .part-1::before {
-    background: url("../assets/img/20200316_102204.jpg") no-repeat center;
+    background: url("../assets/img/20230423_182929.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #product-10 .part-1::before {
-    background: url("../assets/img/20220126_140653.jpg") no-repeat center;
+    background: url("../assets/img/20230423_183515.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-11 .part-1::before {
-    background: url("../assets/img/20220408_162340.jpg") no-repeat center;
+    background: url("../assets/img/20230510_223111.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-12 .part-1::before {
-    background: url("../assets/img/20220601_222937.jpg") no-repeat center;
+    background: url("../assets/img/20230504_144219.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-13 .part-1::before {
-    background: url("../assets/img/20220601_222937.jpg") no-repeat center;
+    background: url("../assets/img/20230427_094741.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #product-14 .part-1::before {
-    background: url("../assets/img/20220506_144242.jpg") no-repeat center;
+    background: url("../assets/img/20230423_185232.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-15 .part-1::before {
-    background: url("../assets/img/20230214_225417.jpg") no-repeat center;
+    background: url("../assets/img/20230423_184153.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-16 .part-1::before {
-    background: url("../assets/img/20230315_115955.jpg") no-repeat center;
+    background: url("../assets/img/20230413_103540.jpg") no-repeat center;
     background-size: cover;
 }
 
