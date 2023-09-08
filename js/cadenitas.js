@@ -93,103 +93,114 @@ const Productos = [
 
 //VARIABLES
 
-const carrito= document.querySelector("#carrito");
-const listaDeCarrito= document.querySelector("#lista-carrito");
-const vaciarCarritoBtn= document.querySelector("#vaciar-carrito")
-const listaProductos= document.querySelector("#listaProductos")
-let productosCarrito =[];
+const carrito = document.querySelector("#carrito");
+const listaDeCarrito = document.querySelector("#lista-carrito");
+const vaciarCarritoBtn = document.querySelector("#vaciar-carrito")
+const listaProductos = document.querySelector("#listaProductos")
+let productosCarrito = [];
 
 CargarEventListener();
-function CargarEventListener(){
-    listaProductos.addEventListener("click", agregarProducto);
-    carrito.addEventListener("click", borrarProducto)
+function CargarEventListener() {
+    listaProductos.addEventListener("click", agregarProducto),
+        carrito.addEventListener("click", borrarProducto),
+        document.addEventListener("DOMContentLoaded", () => {
+            productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carritoHtml();
+        } )
+        vaciarCarritoBtn.addEventListener("click", () => {
+            productosCarrito = [];
+            limpiarCarrito(); 
+            sincronizarStorage();         
+        });
+
+        
 }
 
 
 
 //FUNCIONES
 
-function agregarProducto(e){
-    if(e.target.classList.contains("agregar-carrito"));{
-        productoSeleccionado= e.target.parentElement.parentElement;
+function agregarProducto(e) {
+    if (e.target.classList.contains("agregar-carrito")) {
+        productoSeleccionado = e.target.parentElement.parentElement;
         leerProducto(productoSeleccionado)
     }
 };
 
-function borrarProducto(e){
-    if(e.target.classList.contains("borrar-curso")){
-        const productoId= e.target.getAttribute("data-id");
-        const existe=productosCarrito.some(producto =>(producto.id == productoId && producto.cantidad > 1));
-        if(existe){
-            const productos= productosCarrito.map(producto => {
-                if(producto.id === productoId){
+function borrarProducto(e) {
+    e.preventDefault()
+    if (e.target.classList.contains("borrar-curso")) {
+        const productoId = e.target.getAttribute("data-id");
+
+        const existe = productosCarrito.some(producto => (producto.id == productoId && producto.cantidad > 1));
+        if (existe) {
+            const productos = productosCarrito.map(producto => {
+                if (producto.id === productoId) {
                     producto.cantidad--;
                 }
                 return producto;
             })
-
-            productosCarrito=[...productos]
-        }else{
-            productosCarrito=productosCarrito.filter(producto => producto.id !== productoId)
+            productosCarrito = [...productos]
+        } else {
+            productosCarrito = productosCarrito.filter(producto => producto.id !== productoId)
         }
-
-
-
-
-
-
-
-
         carritoHtml()
     }
 }
 
-function leerProducto(producto){
-    infoJoya ={
+function leerProducto(producto) {
+    infoJoya = {
         titulo: producto.querySelector(".product-title").textContent,
         precio: producto.querySelector(".product-price").textContent,
         id: producto.querySelector("div").getAttribute("id"),
         cantidad: 1
     }
-
-    const existe= productosCarrito.some(producto =>producto.id === infoJoya.id)
-
-    if(existe){
-        const joyas= productosCarrito.map(producto => {
-        if(producto.id === infoJoya.id){
-            producto.cantidad++;
-        return producto;
-    }else{
-        return producto;
-    }
-    });
-    productosCarrito = [...joyas]
-    }else{
+    const existe = productosCarrito.some(producto => producto.id === infoJoya.id)
+    if (existe) {
+        const joyas = productosCarrito.map(producto => {
+            if (producto.id === infoJoya.id) {
+                producto.cantidad++;
+                return producto;
+            } else {
+                return producto;
+            }
+        });
+        productosCarrito = [...joyas]
+    } else {
         productosCarrito.push(infoJoya)
     }
-console.log(productosCarrito);
-carritoHtml()
-}  
+    console.log(productosCarrito);
 
-function carritoHtml(){
+    carritoHtml()
+}
+
+function carritoHtml() {
     limpiarCarrito()
-    productosCarrito.forEach(curso =>{
-        const row= document.createElement("tr");
-        const{titulo,precio,cantidad,id} = curso;
+    productosCarrito.forEach(curso => {
+        const row = document.createElement("tr");
+        const { titulo, precio, cantidad, id } = curso;
         row.innerHTML = `
         <td>${titulo}</td>
         <td>${precio}</td>
         <td>${cantidad}</td>
         <td>
-        <a href="a" class="borrar-curso" data-id="${id}"> X </a>
+        <a href="#" class="borrar-curso"data-id="${id}"> X </a>
         </td>
         `
         listaDeCarrito.appendChild(row)
-        
+
     })
+
+   sincronizarStorage();
 }
 
-function limpiarCarrito(){
-    while (listaDeCarrito.firstChild){
-    listaDeCarrito.removeChild(listaDeCarrito.firstChild);
-}}
+function sincronizarStorage(){
+        localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+}
+
+
+function limpiarCarrito() {
+    while (listaDeCarrito.firstChild) {
+        listaDeCarrito.removeChild(listaDeCarrito.firstChild);
+    }
+}
