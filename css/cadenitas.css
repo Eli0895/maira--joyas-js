@@ -8,8 +8,20 @@ body {
   color: #444444;
 }
 
+/*carrito mostrar */
+.oculto{
+  transform: translateX(-100%);
+  transition: 2s;
+}
+
+.mostrar{
+  opacity: 1;
+  transition: 2s;
+  transform: translateX(0%);
+
+}
+
 .submenu{
-  background-color: rgba(128, 128, 128, 0.432);
   height: auto;
   width: 600px;
   border-radius: 1rem;
