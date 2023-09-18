@@ -74,31 +74,33 @@ function borrarProducto(productoId) {
     
     
 
-function leerProducto(producto) {
-    infoJoya = {
-        titulo: producto.querySelector(".product-title").textContent,
-        precio: producto.querySelector(".product-price").textContent,
-        id: producto.querySelector("div").getAttribute("id"),
-        cantidad: 1
+    function leerProducto(producto) {
+        infoJoya = {
+            titulo: producto.querySelector(".product-title").textContent,
+            precio: parseInt(producto.querySelector(".product-price").textContent.slice(1)),
+            id: producto.querySelector("div").getAttribute("id"),
+            cantidad: 1,
+        };
+        const existe = productosCarrito.some((producto) => producto.id === infoJoya.id);
+        if (existe) {
+            const joyas = productosCarrito.map((producto) => {
+                if (producto.id === infoJoya.id) {
+                    producto.cantidad++;
+                    return producto;
+                } else {
+                    return producto;
+                }
+            });
+            productosCarrito = [...joyas];
+        } else {
+            productosCarrito.push(infoJoya);
+        }
+        console.log(productosCarrito);
+    
+        carritoHtml();
     }
-    const existe = productosCarrito.some(producto => producto.id === infoJoya.id)
-    if (existe) {
-        const joyas = productosCarrito.map(producto => {
-            if (producto.id === infoJoya.id) {
-                producto.cantidad++;
-                return producto;
-            } else {
-                return producto;
-            }
-        });
-        productosCarrito = [...joyas]
-    } else {
-        productosCarrito.push(infoJoya)
-    }
-    console.log(productosCarrito);
 
-    carritoHtml()
-}
+ 
 
 function carritoHtml() {
     limpiarCarrito()
@@ -128,13 +130,10 @@ function sincronizarStorage(){
 productosPrecioTotal.innerHTML = calcularTotal();
 
 function calcularTotal() {
-    return productosCarrito.reduce((total, item) => {
-        const miItem = listaProductos.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
-        });
-        return total + miItem[0].precio;
-    }, 0).toFixed(2);
-};
+	return productosCarrito.reduce((total, item) => {
+		return total + item.precio * item.cantidad;
+	}, 0);
+}
 
 function limpiarCarrito() {
     while (listaDeCarrito.firstChild) {
