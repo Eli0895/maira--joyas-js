@@ -9,11 +9,10 @@ body {
   color: #444444;
 }
 
-.log-in{
+.inicio{
   font-size: 1rem;
   text-decoration: none;
-  background-color: black;
-  color: white;
+  color: black;
   border-radius: 2rem;
   padding: 5px;
   display: flex;

@@ -122,6 +122,8 @@ function carritoHtml() {
     })
 })
    sincronizarStorage();
+   productosPrecioTotal.innerHTML = calcularTotal();
+
 }
 
 function sincronizarStorage(){
