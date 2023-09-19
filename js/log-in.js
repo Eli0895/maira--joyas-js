@@ -1,5 +1,5 @@
-const check=document.querySelector("#check");
-const formulario= document.querySelector("#form-login");
+const check = document.querySelector("#check");
+const formulario = document.querySelector("#form-login");
 const inputUser = document.querySelector("#user").value;
 const inputPass = document.querySelector("#pass").value;
 
@@ -14,27 +14,24 @@ formulario.addEventListener("submit", (e) => {
     e.preventDefault();
     registrar();
     setTimeout(() => {
-        window.location= "log-in.html";
-    },2000)
+        window.location = "log-in.html";
+    }, 2000)
 });
 
 
 function iniciarSesion() {
 
-    const usuario=email.value;
-    const pass=contraseña.value;
-    const userFromStorage=JSON.parse(localStorage.getItem("user"));
-    
-    if (userFromStorage && userFromStorage.usuario === usuario && userFromStorage.pass === pass) {
+    const usuario = email.value;
+    const pass = contraseña.value;
+    const userFromStorage = JSON.parse(localStorage.getItem("user"));
+
+    if (userFromStorage.usuario === usuario && userFromStorage.pass === pass) {
         window.location = "index.html"
     } else {
         alert('Correo o contraseña incorrecta');
     }
 }
 
-check.addEventListener("click",(e) =>{
+check.addEventListener("click", (e) => {
     iniciarSesion();
-    setTimeout(() =>{
-        window.location="index.html"
-    },2000)
 });
