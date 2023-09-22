@@ -1,37 +1,32 @@
+//VARIABLES
+
 const check = document.querySelector("#check");
-const formulario = document.querySelector("#form-login");
-const inputUser = document.querySelector("#user").value;
-const inputPass = document.querySelector("#pass").value;
+const inputUser = document.querySelector("#email");
+const inputPass = document.querySelector("#pass");
 
-function registrar() {
-
-
-    const user = { usuario: inputUser.value, pass: inputPass.value };
-    localStorage.setItem("user", JSON.stringify(user))
-}
-
-formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
-    registrar();
-    setTimeout(() => {
-        window.location = "log-in.html";
-    }, 2000)
-});
-
+//FUNCIONES
 
 function iniciarSesion() {
-
-    const usuario = email.value;
-    const pass = contraseña.value;
-    const userFromStorage = JSON.parse(localStorage.getItem("user"));
-
-    if (userFromStorage.usuario === usuario && userFromStorage.pass === pass) {
-        window.location = "index.html"
-    } else {
-        alert('Correo o contraseña incorrecta');
-    }
+	const usuario = inputUser.value;
+	const pass = inputPass.value;
+	const userFromStorage = JSON.parse(localStorage.getItem("user"));
+	console.log(userFromStorage);
+	if (userFromStorage.usuario === usuario && userFromStorage.pass === pass) {
+		window.location = "carrito.html";
+	} else {
+		Swal.fire({
+            icon: 'error',
+            title: "CONTRASEÑA O USUARIO INCORRECTO",
+            text: '¡Volve a intentarlo!',
+          })
+	}
 }
 
+//EVENTOS
+
 check.addEventListener("click", (e) => {
-    iniciarSesion();
+    setTimeout(() => {
+        iniciarSesion();
+	}, 500);
+
 });

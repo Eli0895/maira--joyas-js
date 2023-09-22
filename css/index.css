@@ -4,6 +4,11 @@ header nav a {
   font-size: 2rem;
 }
 
+.navbar{
+  background-color: #26272b88;
+  height: 80px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #444444;
