@@ -10,7 +10,6 @@ function iniciarSesion() {
 	const usuario = inputUser.value;
 	const pass = inputPass.value;
 	const userFromStorage = JSON.parse(localStorage.getItem("user"));
-	console.log(userFromStorage);
 	if (userFromStorage.usuario === usuario && userFromStorage.pass === pass) {
 		window.location = "carrito.html";
 	} else {
