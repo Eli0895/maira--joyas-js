@@ -23,23 +23,3 @@ formulario.addEventListener("submit", (e) => {
 });
 
 
-const listapi = document.querySelector("#listadoapi");
-const fetchButton = document.querySelector("#fetchButton");
-
-
-fetchButton.addEventListener("click", () => {
-    console.log(fetch('https://jsonplaceholder.typicode.com/todos/1'));
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((datos) => {
-        listapi.innerHTML = ''; 
-        for (const post of datos) {
-            console.log(post);
-            const li = document.createElement("li");
-            li.className = "liapi";
-            li.innerHTML = `<h2>${post.title}</h2>
-                            <p>${post.body}</p>`;
-            listapi.appendChild(li);
-        }
-    });
-});

@@ -25,7 +25,7 @@ function CargarEventListener() {
         sincronizarStorage();
     });
     finalizarCompra.addEventListener("click", () => {
-        if(carrito.length > 0){
+        if(productosCarrito.length > 0){
             setTimeout(() => {
                 window.location = "pagar.html";
             }, 500);
@@ -147,16 +147,17 @@ const fetchButton = document.querySelector("#fetchButton");
 
 
 fetchButton.addEventListener("click", () => {
-    console.log(fetch('https://jsonplaceholder.typicode.com/todos/1'));
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    console.log(fetch('https://jsonplaceholder.typicode.com/posts/1/comments'));
+    fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
     .then((response) => response.json())
     .then((datos) => {
         listapi.innerHTML = ''; 
         for (const post of datos) {
             console.log(post);
             const li = document.createElement("li");
-            li.className = "liapi";
-            li.innerHTML = `<h2>${post.title}</h2>
+            li.className = "card";
+            li.innerHTML = `<h5>${post.name}</h5>
+                            <h6>${post.email}</h6>
                             <p>${post.body}</p>`;
             listapi.appendChild(li);
         }
